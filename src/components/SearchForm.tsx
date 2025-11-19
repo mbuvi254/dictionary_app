@@ -12,7 +12,7 @@ const SearchForm = ()=>{
 const [wordSearch,setWordSearch]=useState("");
 const setResults = useSearchResultStore(state=>state.setResults);
      
-  const { data, isLoading, error,refetch } = useQuery({
+  const { isLoading, error,refetch } = useQuery({
     queryKey: ["get-word-meaning",wordSearch],
     queryFn: async () => {
       const res = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${wordSearch}`,);
